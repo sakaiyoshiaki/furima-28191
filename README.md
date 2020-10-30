@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/97528827-f4cfbd80-19f1-11eb-8872-5464359f0755.png)
+![table](https://user-images.githubusercontent.com/67823080/97664118-c9b2a000-1abd-11eb-971d-701bf77a8536.png)
 
 ## userテーブル
 | Column             | Type   | Options                 |
@@ -25,10 +25,11 @@
 | ------------------- | ---------- | ---------------------------- |
 | title               | string     | null: false                  |
 | description         | text       | null: false                  |
-| status_id           | integer    | null: false(enum)            |
-| shipping_charges_id | integer    | null: false(enum)            |
-| from_area_id        | integer    | null: false(enum)            |
-| deliver_leadtime_id | integer    | null: false(enum)            |
+| category_id         ｜integer    ｜ null: false                 ｜
+| status_id           | integer    | null: false                  |
+| shipping_charges_id | integer    | null: false                  |
+| from_area_id        | integer    | null: false                  |
+| deliver_leadtime_id | integer    | null: false                  |
 | sales_price         | integer    | null: false                  |
 | user_id             | references | null: false,foreign_key:true |
 
@@ -36,45 +37,33 @@
 
 - has_one    :purchase_history
 - belongs_to :user
-- belongs_to :category
 
 ## addressテーブル
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
 | postal_code         | string     | null: false                   |
-| prefecture_id       | integer    | null: false(enum)             |
+| prefecture_id       | integer    | null: false                   |
 | city                | string     | null: false                   |
 | house_number        | string     | null: false                   |
-| building_name       | string     | null: false                   |
+| building_name       | string     |                               |
 | tel                 | string     | null: false                   |
 | purchase_history_id | references | null: false,foreign_key: true |
 
 ### Association
 
-- has_one :purchase_history
+- belongs_to :purchase_history
 
 ## purchase_historyテーブル
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
 | products_id | references | null: false,foreign_key: true |
 | user_id     | references | null: false,foreign_key: true |
-| address_id  | references | null: false,foreign_key: true |
 
 ### Association
 
-- belongs_to :products
+- belongs_to :product
 - belongs_to :user
-- belongs_to :address
-
-## categoryテーブル
-| Column      | Type       | Options                       |
-| ----------- | ---------- | ----------------------------- |
-| name        | string     | null: false                   |
-| products_id | references | null: false,foreign_key: true |
-
-### Association
-
-- has_many :products
+- has_one :address
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
