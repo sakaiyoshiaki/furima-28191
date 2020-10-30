@@ -30,7 +30,7 @@
 | shipping_charges_id | integer    | null: false                  |
 | from_area_id        | integer    | null: false                  |
 | deliver_leadtime_id | integer    | null: false                  |
-| sales_price         | integer    | null: false                  |
+| price               | integer    | null: false                  |
 | user_id             | references | null: false,foreign_key:true |
 
 ### Association
