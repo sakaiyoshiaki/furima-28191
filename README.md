@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/97664118-c9b2a000-1abd-11eb-971d-701bf77a8536.png)
+![table](https://user-images.githubusercontent.com/67823080/97774626-dfe35d80-1b9c-11eb-9415-d82c405b780f.png)
 
 ## userテーブル
 | Column             | Type   | Options                 |
@@ -16,8 +16,8 @@
 
 ### Association
 
-- has_many :products
-- has_many :purchase_histories
+- has_many :products, dependent: :destroy
+- has_many :purchase_histories, dependent: :destroy
 
 
 ## productsテーブル
@@ -31,7 +31,7 @@
 | from_area_id        | integer    | null: false                  |
 | deliver_leadtime_id | integer    | null: false                  |
 | price               | integer    | null: false                  |
-| user_id             | references | null: false,foreign_key:true |
+| user                | references | null: false,foreign_key:true |
 
 ### Association
 
@@ -47,7 +47,7 @@
 | house_number        | string     | null: false                   |
 | building_name       | string     |                               |
 | tel                 | string     | null: false                   |
-| purchase_history_id | references | null: false,foreign_key: true |
+| purchase_history    | references | null: false,foreign_key: true |
 
 ### Association
 
@@ -56,8 +56,8 @@
 ## purchase_historyテーブル
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
-| products_id | references | null: false,foreign_key: true |
-| user_id     | references | null: false,foreign_key: true |
+| products    | references | null: false,foreign_key: true |
+| user        | references | null: false,foreign_key: true |
 
 ### Association
 
