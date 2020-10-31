@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/97774626-dfe35d80-1b9c-11eb-9415-d82c405b780f.png)
+![table](https://user-images.githubusercontent.com/67823080/97775041-63eb1480-1ba0-11eb-85a1-22a21ee462c5.png)
 
 ## userテーブル
 | Column             | Type   | Options                 |
