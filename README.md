@@ -54,10 +54,10 @@
 - belongs_to :purchase_history
 
 ## purchase_historyテーブル
-| Column      | Type       | Options                       |
-| ----------- | ---------- | ----------------------------- |
-| products    | references | null: false,foreign_key: true |
-| user        | references | null: false,foreign_key: true |
+| Column  | Type       | Options                       |
+| ------- | ---------- | ----------------------------- |
+| product | references | null: false,foreign_key: true |
+| user    | references | null: false,foreign_key: true |
 
 ### Association
 
