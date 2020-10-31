@@ -1,8 +1,8 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/97775041-63eb1480-1ba0-11eb-85a1-22a21ee462c5.png)
+![table](https://user-images.githubusercontent.com/67823080/97775428-da3d4600-1ba3-11eb-8b48-7162b21ea9eb.png)
 
-## userテーブル
+## usersテーブル
 | Column             | Type   | Options                 |
 | ------------------ | ------ | ----------------------- |
 | nickname           | string | null: false             |
@@ -38,7 +38,7 @@
 - has_one    :purchase_history
 - belongs_to :user
 
-## addressテーブル
+## addressesテーブル
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
 | postal_code         | string     | null: false                   |
@@ -53,7 +53,7 @@
 
 - belongs_to :purchase_history
 
-## purchase_historyテーブル
+## purchase_historiesテーブル
 | Column  | Type       | Options                       |
 | ------- | ---------- | ----------------------------- |
 | product | references | null: false,foreign_key: true |
