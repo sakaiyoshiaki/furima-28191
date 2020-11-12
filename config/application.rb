@@ -18,4 +18,7 @@ module Furima28191
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+  class Application < Rails::Application
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+  end  #field_with_errorsの自動生成によるレイアウト崩れを防ぐ
 end
