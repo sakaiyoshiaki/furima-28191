@@ -21,4 +21,5 @@ module Furima28191
   class Application < Rails::Application
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end  #field_with_errorsの自動生成によるレイアウト崩れを防ぐ
+
 end
