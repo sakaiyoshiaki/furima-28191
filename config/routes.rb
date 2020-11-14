@@ -8,10 +8,11 @@ Rails.application.routes.draw do
       registrations: "users/registrations",
       sessions: "users/sessions"
     }
-  root "items#index"
+  root to: 'items#index'
   resources :users
 
 end
 
 #[POST] "/ users / sign_up"に一致するルートがありません
 #→ , path_names: {sign_up: ''}でルートを削除
+#root "items#index"
