@@ -18,9 +18,7 @@ module Furima28191
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.assets.initialize_on_precompile = false #デプロイ関連
-    config.autoload_paths << Rails.root.join("bin") #デプロイ関連：bin以下の読み込み
-    # config.autoload_paths += Dir["#{config.root}/lib/**/"]
-    # config.eager_load_paths += Dir["#{config.root}/lib/**/"]
+    # config.autoload_paths << Rails.root.join("bin") #デプロイ関連：bin以下の読み込み
     # config.autoload_paths += Dir["#{config.root}/bin/**/"]
     # config.eager_load_paths += Dir["#{config.root}/bin/**/"]
   end

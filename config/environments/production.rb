@@ -23,11 +23,11 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress CSS using a preprocessor.
-  config.assets.css_compressor = :sass #デプロイ関連 CSSをコンパイルする
-  config.assets.js_compressor = :uglifier #デプロイ関連：追加
-  config.assets.css_compressor = :scss #デプロイ関連：追加
+  # config.assets.css_compressor = :sass #デプロイ関連 CSSをコンパイルする
+  # config.assets.js_compressor = :uglifier #デプロイ関連：追加
+  # config.assets.css_compressor = :scss #デプロイ関連：追加
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true #デプロイ関連：デフォルトはfalse
+  config.assets.compile = false #デプロイ関連：デフォルトはfalse
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
