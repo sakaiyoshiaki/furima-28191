@@ -11,21 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   @user = User.new(sign_up_params)
-  #   # バリデーションで問題があれば、保存はされず「新規登録画面」に戻る
-  #   # if @user.valid?
-  #   #   @user.save
-  #   #   redirect_to root_path
-  #   # else
-  #   #   #保存されなければ、newに戻る
-  #   #   render 'new'
-  # end
-  #   unless @user.valid?
-  #     flash.now[:alert] = @user.errors.full_messages
-  #     render :new and return
-  #   end
-  #   # session["devise.regist_data"] = {user: @user.attributes}
-  #   # session["devise.regist_data"][:user]["password"] = params[:user][:password]
+  #     super
   # end
 
   # GET /resource/edit
@@ -48,6 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # in to be expired now. This is useful if the user wants to
   # cancel oauth signing in/up in the middle of the process,
   # removing all OAuth session data.
+
   # def cancel
   #   super
   # end
@@ -55,9 +42,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  #   def configure_sign_up_params
-  #     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :family_name, :personal_name, :family_name_kana, :personal_name_kana, :birthday])
-  #   end
   # end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
@@ -65,6 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
+
   # def after_sign_up_path_for(resource)
   #   super(resource)
   # end
