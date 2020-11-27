@@ -11,7 +11,7 @@ describe Item do
       item = create(:item)
       expect(@item).to be_valid
     end
-    binding.pry
+
     # it "titleが空ならNG" do
     #   @item.title = nil
     #   @item.valid?
