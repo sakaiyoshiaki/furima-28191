@@ -42,6 +42,6 @@ class ItemsController < ApplicationController
 
   def item_params
     # ストロングパラメータ
-    params.require(:item).permit(:image,:title, :description, :category_id, :status_id, :shipping_charges_id, :from_area_id, :deliver_leadtime_id, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :shipping_charges_id, :from_area_id, :deliver_leadtime_id, :price).merge(user_id: current_user.id)
   end
 end

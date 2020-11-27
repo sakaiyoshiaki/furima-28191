@@ -33,13 +33,14 @@ ja:
         birthday: 生年月日 #追加
 
       item:
-        title: 商品名
-        description: 商品の説明
-        shipping_charges_id: 配送料の負担先
-        price: 販売価格
-        category_id: カテゴリー
-        status_id: 商品の状態
-        deliver_leadtime_id: 発送までの日数
+        title: 商品名 #追加
+        description: 商品の説明 #追加
+        shipping_charges_id: 配送料の負担先 #追加
+        price: 販売価格 #追加
+        category_id: カテゴリー #追加
+        status_id: 商品の状態 #追加
+        from_area_id: 発送元の地域
+        deliver_leadtime_id: 発送までの日数 #追加
 
     models:
       user: ユーザ
