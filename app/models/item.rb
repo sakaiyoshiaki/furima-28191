@@ -11,12 +11,14 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :title, length: { maximum: 40 }
     validates :description, length: { maximum: 1000 }
-    validates :category_id, numericality: { other_than: 1 }
-    validates :status_id, numericality: { other_than: 1 }
-    validates :shipping_charges_id, numericality: { other_than: 1 }
-    validates :from_area_id, numericality: { other_than: 1 }
-    validates :deliver_leadtime_id, numericality: { other_than: 1 }
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
-    validates :user_id
+
+    with_options numericality: { other_than: 1, message: 'を選択してください' } do
+      validates :category_id
+      validates :status_id
+      validates :shipping_charges_id
+      validates :from_area_id
+      validates :deliver_leadtime_id
+    end
   end
 end

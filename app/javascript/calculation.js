@@ -16,7 +16,3 @@ $(function(){
     // htmlメソッドを使って、販売利益の空欄をprofitの値に書き換え。
   });
 });
-
-$(function() {
-  console.log("OK");
-});
