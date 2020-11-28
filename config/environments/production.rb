@@ -27,7 +27,7 @@ Rails.application.configure do
   # config.assets.js_compressor = :uglifier #デプロイ関連：追加
   # config.assets.css_compressor = :scss #デプロイ関連：追加
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false #デプロイ関連：デフォルトはfalse
+  config.assets.compile = false #デプロイ関連
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
