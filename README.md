@@ -1,6 +1,7 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/97775428-da3d4600-1ba3-11eb-8b48-7162b21ea9eb.png)
+![table](https://user-images.githubusercontent.com/67823080/99186557-677fbd80-2794-11eb-8cfd-394bfd6751c7.png)
+
 
 ## usersテーブル
 | Column             | Type   | Options                 |
@@ -16,11 +17,11 @@
 
 ### Association
 
-- has_many :products, dependent: :destroy
+- has_many :items, dependent: :destroy
 - has_many :purchase_histories, dependent: :destroy
 
 
-## productsテーブル
+## itemsテーブル
 | Column              | Type       | Options                      |
 | ------------------- | ---------- | ---------------------------- |
 | title               | string     | null: false                  |
@@ -54,14 +55,14 @@
 - belongs_to :purchase_history
 
 ## purchase_historiesテーブル
-| Column  | Type       | Options                       |
-| ------- | ---------- | ----------------------------- |
-| product | references | null: false,foreign_key: true |
-| user    | references | null: false,foreign_key: true |
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| item   | references | null: false,foreign_key: true |
+| user   | references | null: false,foreign_key: true |
 
 ### Association
 
-- belongs_to :product
+- belongs_to :item
 - belongs_to :user
 - has_one :address
 

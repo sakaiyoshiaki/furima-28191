@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-10-31T09:05:05.123Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="nPXgY39MUyi5Hhnyy_io" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-15T13:42:52.376Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.0 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="ZnkNoQsBbhccw7G0OMBG" version="13.6.5">
     <diagram id="M88q_a9qLkiQrtESlU7Z" name="ページ1">
-        <mxGraphModel dx="968" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -15,7 +15,7 @@
                         <mxPoint x="800" y="740" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="150" value="products" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;strokeColor=#000000;fillColor=#CCCCCC;fontColor=#000000;" parent="1" vertex="1">
+                <mxCell id="150" value="items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;strokeColor=#000000;fillColor=#CCCCCC;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="600" y="250" width="400" height="364" as="geometry">
                         <mxRectangle x="70" y="450" width="90" height="26" as="alternateBounds"/>
                     </mxGeometry>
@@ -248,7 +248,7 @@
                 <mxCell id="254" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="252" vertex="1">
                     <mxGeometry width="330" height="34" as="geometry"/>
                 </mxCell>
-                <mxCell id="255" value="&lt;font color=&quot;#000000&quot;&gt;product&lt;/font&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="254" vertex="1">
+                <mxCell id="255" value="&lt;font color=&quot;#000000&quot;&gt;item&lt;/font&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;" parent="254" vertex="1">
                     <mxGeometry width="95" height="34" as="geometry"/>
                 </mxCell>
                 <mxCell id="256" value="references" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;fontColor=#000000;" parent="254" vertex="1">

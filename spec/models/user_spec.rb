@@ -5,7 +5,6 @@ describe User do
     before do
       @user = FactoryBot.build(:user)
     end
-
     it '全て入力されていればOK' do
       expect(@user).to be_valid
     end
