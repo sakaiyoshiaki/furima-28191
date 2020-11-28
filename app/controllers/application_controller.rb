@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
-  before_action :authenticate_user!, only: [:show] # 一覧画面(index:トップページ)は未ログインユーザーでも実行可能。詳細画面(show)はログインユーザーのみ実行可能。
+  before_action :authenticate_user!, only: [:show] # 一覧画面(index:トップページ)は未ログインユーザーでも実行可能・詳細画面(show)はログインユーザーのみ実行可能
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

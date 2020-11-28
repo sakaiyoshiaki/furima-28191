@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :items
 end
 
-#ルーティングエラー：[POST] "/ users / sign_up"に一致するルートがありません
-#→→→ , path_names: {sign_up: ''}でルートを削除
+#[POST] "/ users / sign_up"に一致するルートがありません
+#→ , path_names: {sign_up: ''}でルートを削除
