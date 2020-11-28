@@ -72,7 +72,7 @@ describe Item do
       expect(@item.errors[:price]).to include('は300以上の値にしてください')
     end
     it 'priceが9999999円より高額ならNG' do
-      @item.price = '19999999'
+      @item.price = 19_999_999
       @item.valid?
       expect(@item.errors[:price]).to include('は9999999以下の値にしてください')
     end
