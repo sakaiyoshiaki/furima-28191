@@ -1,7 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/99186557-677fbd80-2794-11eb-8cfd-394bfd6751c7.png)
-
+![table](https://user-images.githubusercontent.com/67823080/100536916-3eb4f900-3267-11eb-8517-9292fdadd2f8.png)
 
 ## usersテーブル
 | Column             | Type   | Options                 |
@@ -28,7 +27,7 @@
 | description         | text       | null: false                  |
 | category_id         | integer    | null: false                  |
 | status_id           | integer    | null: false                  |
-| shipping_charges_id | integer    | null: false                  |
+| shipping_charge_id  | integer    | null: false                  |
 | from_area_id        | integer    | null: false                  |
 | deliver_leadtime_id | integer    | null: false                  |
 | price               | integer    | null: false                  |
