@@ -49,5 +49,4 @@ class ItemsController < ApplicationController
   # def was_attached?
   #   self.image.attached?
   # end
-
 end
