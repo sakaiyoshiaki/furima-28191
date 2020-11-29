@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     with_options numericality: { other_than: 1, message: 'を選択してください' } do
       validates :category_id
       validates :status_id
-      validates :shipping_charges_id
+      validates :shipping_charge_id
       validates :from_area_id
       validates :deliver_leadtime_id
     end

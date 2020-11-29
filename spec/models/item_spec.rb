@@ -34,10 +34,10 @@ describe Item do
       @item.valid?
       expect(@item.errors[:status_id]).to include('を選択してください')
     end
-    it 'shipping_charges_idが1ならNG' do
-      @item.shipping_charges_id = '1'
+    it 'shipping_charge_idが1ならNG' do
+      @item.shipping_charge_id = '1'
       @item.valid?
-      expect(@item.errors[:shipping_charges_id]).to include('を選択してください')
+      expect(@item.errors[:shipping_charge_id]).to include('を選択してください')
     end
     it 'from_area_idが1ならNG' do
       @item.from_area_id = '1'

@@ -2,22 +2,23 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
+    # 全ての商品レコードを含んだインスタンス変数を生成し、ビューに表示する
+    @items = Item.all
   end
 
   def new
-    # モデルオブジェクト生成
+    # itemモデルオブジェクトを生成する
     @item = Item.new
   end
 
   def create
-    # formのデータを受け取る
+    # 入力フォームのデータを受け取り、入力値に問題がなければ保存する
     @item = Item.new(item_params)
-    # バリデーションで問題があれば、保存はされず「投稿画面」に戻る
+    # バリデーションで問題がなければ保存され、トップページに遷移する。問題があれば保存はされず、「商品入力画面」(/new)に戻る。
     if @item.valid?
       @item.save
       redirect_to root_path
     else
-      # 保存されなければ、newに戻る
       render 'new'
     end
   end
@@ -42,6 +43,11 @@ class ItemsController < ApplicationController
 
   def item_params
     # ストロングパラメータ
-    params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :shipping_charges_id, :from_area_id, :deliver_leadtime_id, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :shipping_charge_id, :from_area_id, :deliver_leadtime_id, :price).merge(user_id: current_user.id)
   end
+
+  # def was_attached?
+  #   self.image.attached?
+  # end
+
 end
