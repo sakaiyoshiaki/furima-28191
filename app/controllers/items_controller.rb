@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
-    # 全ての商品レコードを含んだインスタンス変数を生成し、ビューに表示する
-    @items = Item.all
+    # 全ての商品レコードを含んだインスタンス変数を生成し、出品順に並び替える
+    @items = Item.order("created_at DESC")
   end
 
   def new
