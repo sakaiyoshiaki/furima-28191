@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 
   def show
     # 出品された商品データのidを検索する
-    # @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   # def destroy
