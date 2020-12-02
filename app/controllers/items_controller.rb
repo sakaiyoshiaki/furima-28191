@@ -33,13 +33,13 @@ class ItemsController < ApplicationController
   #   item.destroy
   # end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   item = Item.find(params[:id]) #商品idと紐付ける
-  #   item.update(item_params)
-  # end
+  def update
+    item = Item.find(params[:id]) #商品idと紐付ける
+    item.update(item_params)
+  end
 
   private
 
