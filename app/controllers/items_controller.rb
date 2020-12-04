@@ -34,11 +34,15 @@ class ItemsController < ApplicationController
   # end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
-    item = Item.find(params[:id]) #商品idと紐付ける
-    item.update(item_params)
+    if Item.update(item_params)
+      redirect_to item_path #商品詳細画面に遷移
+    else
+      render :edit
+    end
   end
 
   private
