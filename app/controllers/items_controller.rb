@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # 出品された商品データのidを検索する
+    # 出品された商品データのidから商品レコードを取得する
     @item = Item.find(params[:id])
   end
 
@@ -34,12 +34,15 @@ class ItemsController < ApplicationController
   # end
 
   def edit
+    # 編集前の商品情報を表示する
     @item = Item.find(params[:id])
   end
 
   def update
-    if Item.update(item_params)
-      redirect_to item_path #商品詳細画面に遷移
+    @item = Item.find(params[:id])
+    # バリデーションで問題がなければ更新され、商品詳細画面に遷移する。問題があれば更新されず、「商品編集画面」(/edit)に戻る。
+    if @item.update(item_params)
+      redirect_to item_path
     else
       render :edit
     end
