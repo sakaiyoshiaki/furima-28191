@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    # 出品者のみ、自分の商品の編集画面に直接URLからアクセスできる。出品者以外はトップページに遷移。未ログイン者はログイン画面に遷移。
+    # 出品者のみ、自分の商品の編集画面に直接URLからアクセスできる。出品者以外はトップページに遷移。未ログイン時はログイン画面に遷移。
     if user_signed_in? && current_user.id == @item.user_id
       render :edit
     else
