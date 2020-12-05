@@ -43,8 +43,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    # 出品者のみ、商品レコードを削除できる
+    if user_signed_in? && current_user.id == @item.user_id
+      @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
