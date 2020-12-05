@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_item, only: [:show, :edit, :update]
-  before_action :move_to_index, except: [:index, :show, :new]
+  before_action :move_to_index, only: :edit
 
   def index
     # 全ての商品レコードを含んだインスタンス変数を生成し、出品順に並び替える
