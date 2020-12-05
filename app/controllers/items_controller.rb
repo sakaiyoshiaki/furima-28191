@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: :edit
 
   def index
@@ -29,11 +29,6 @@ class ItemsController < ApplicationController
     # 出品された商品データのidから商品レコードを取得する
   end
 
-  # def destroy
-  #   item = Item.find(params[:id])
-  #   item.destroy
-  # end
-
   def edit
     # 編集前の商品情報を表示する
   end
@@ -45,6 +40,11 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   private
