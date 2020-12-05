@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     # 全ての商品レコードを含んだインスタンス変数を生成し、出品順に並び替える
@@ -24,8 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # 出品された商品データのidを検索する
-    @item = Item.find(params[:id])
+    # 出品された商品データのidから商品レコードを取得する
   end
 
   # def destroy
@@ -33,13 +34,18 @@ class ItemsController < ApplicationController
   #   item.destroy
   # end
 
-  # def edit
-  # end
+  def edit
+    # 編集前の商品情報を表示する
+  end
 
-  # def update
-  #   item = Item.find(params[:id]) #商品idと紐付ける
-  #   item.update(item_params)
-  # end
+  def update
+    # バリデーションで問題がなければ更新され、商品詳細画面に遷移する。問題があれば更新されず、「商品編集画面」(/edit)に戻る。
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
+  end
 
   private
 
@@ -48,7 +54,17 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :shipping_charge_id, :from_area_id, :deliver_leadtime_id, :price).merge(user_id: current_user.id)
   end
 
-  # def was_attached?
-  #   self.image.attached?
-  # end
+  def set_item
+    # 共通処理(idに紐づいた商品レコードの取得)を定義し、アクション前に実行
+    @item = Item.find(params[:id])
+  end
+
+  def move_to_index
+    # 出品者のみ、自分の商品の編集画面に直接URLからアクセスできる。出品者以外はトップページに遷移。未ログイン時はログイン画面に遷移。
+    if user_signed_in? && current_user.id == @item.user_id
+      render :edit
+    else
+      redirect_to root_path
+    end
+  end
 end
