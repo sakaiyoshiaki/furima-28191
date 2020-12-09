@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/100536916-3eb4f900-3267-11eb-8517-9292fdadd2f8.png)
+![table](https://user-images.githubusercontent.com/67823080/101627532-d681c680-3a61-11eb-80f9-85dfa787099c.png)
 
 ## usersテーブル
 | Column             | Type   | Options                 |
@@ -38,7 +38,7 @@
 - has_one    :purchase_history
 - belongs_to :user
 
-## addressesテーブル
+## ordersテーブル
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
 | postal_code         | string     | null: false                   |
@@ -56,14 +56,14 @@
 ## purchase_historiesテーブル
 | Column | Type       | Options                       |
 | ------ | ---------- | ----------------------------- |
-| item   | references | null: false,foreign_key: true |
 | user   | references | null: false,foreign_key: true |
+| item   | references | null: false,foreign_key: true |
 
 ### Association
 
 - belongs_to :item
 - belongs_to :user
-- has_one :address
+- has_one :order
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
