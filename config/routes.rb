@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root "items#index"
   resources :users
   resources :items
+  resources :orders
 end
 
 #ルーティングエラー：[POST] "/ users / sign_up"に一致するルートがありません
