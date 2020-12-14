@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-12-14T11:23:20.218Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.0 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="p_129vYHPH8ywuOPumMc" version="13.10.0" type="embed">
+<mxfile host="65bd71144e" modified="2020-12-14T11:40:52.760Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.0 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="TYykO_z29cpx9d9lcWl1" version="13.10.0" type="embed">
     <diagram id="M88q_a9qLkiQrtESlU7Z" name="ページ1">
         <mxGraphModel dx="935" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
             <root>
@@ -367,7 +367,7 @@
                 <mxCell id="289" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="264" vertex="1">
                     <mxGeometry y="220" width="400" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="290" value="purchase_history" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;fontColor=#000000;" parent="289" vertex="1">
+                <mxCell id="290" value="item_purchase" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;fontColor=#000000;" parent="289" vertex="1">
                     <mxGeometry width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="291" value="references" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;fontColor=#000000;" parent="289" vertex="1">

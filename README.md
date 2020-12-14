@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/102076090-88e2d080-3e4a-11eb-9dd7-2dc8daba8b7b.png)
+![table](https://user-images.githubusercontent.com/67823080/102077539-d2ccb600-3e4c-11eb-8c1e-1c50c63da970.png)
 
 ## usersテーブル
 | Column             | Type   | Options                 |
@@ -47,7 +47,7 @@
 | house_number        | string     | null: false                   |
 | building_name       | string     |                               |
 | tel                 | string     | null: false                   |
-| item_purchases　    | references | null: false,foreign_key: true |
+| item_purchase 　    | references | null: false,foreign_key: true |
 
 ### Association
 
