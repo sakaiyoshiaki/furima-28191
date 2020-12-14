@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/101627532-d681c680-3a61-11eb-80f9-85dfa787099c.png)
+![table](https://user-images.githubusercontent.com/67823080/102076090-88e2d080-3e4a-11eb-9dd7-2dc8daba8b7b.png)
 
 ## usersテーブル
 | Column             | Type   | Options                 |
@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items, dependent: :destroy
-- has_many :purchase_histories, dependent: :destroy
+- has_many :item_purchases, dependent: :destroy
 
 
 ## itemsテーブル
@@ -35,8 +35,8 @@
 
 ### Association
 
-- has_one    :purchase_history
 - belongs_to :user
+- has_one    :item_purchase
 
 ## ordersテーブル
 | Column              | Type       | Options                       |
@@ -51,9 +51,9 @@
 
 ### Association
 
-- belongs_to :purchase_history
+- belongs_to :item_purchase
 
-## purchase_historiesテーブル
+## item_purchasesテーブル
 | Column | Type       | Options                       |
 | ------ | ---------- | ----------------------------- |
 | user   | references | null: false,foreign_key: true |
@@ -61,8 +61,8 @@
 
 ### Association
 
-- belongs_to :item
 - belongs_to :user
+- belongs_to :item
 - has_one :order
 
 This README would normally document whatever steps are necessary to get the
