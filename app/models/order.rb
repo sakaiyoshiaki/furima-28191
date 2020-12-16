@@ -6,10 +6,13 @@ class Order < ApplicationRecord
 
   with_options presence: true do
     validates :postal_code,format:{with:/\A\d{3}[_]\d{4}\z/}
-    validates :prefecture_id
     validates :city
     validates :house_number
     validates :building_name
-    validates :tel,length: {minimum: 11}
+    validates :tel,length: { maximum: 11}
+    with_options numericality: { other_than: 1, message: 'を選択してください' } do
+      validates :prefecture_id
+    end
   end
+
 end

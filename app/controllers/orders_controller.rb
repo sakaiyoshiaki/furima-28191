@@ -2,8 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    # @item = Item.find(params[:item_id])
-    @orders = Order.all
+    @orders = Order.new
   end
 
   def new
