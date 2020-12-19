@@ -1,11 +1,12 @@
 class Order < ApplicationRecord
-  belongs_to :item_purchase
+  #belongs_to :item_purchase
+  attr_accessor :token
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
 
   with_options presence: true do
-    validates :postal_code,format:{with:/\A\d{3}[_]\d{4}\z/}
+    validates :postal_code,format:{with:/\A\d{3}[-]\d{4}\z/}
     validates :city
     validates :house_number
     validates :building_name

@@ -2,10 +2,6 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    @orders = Order.new
-  end
-
-  def new
     @order = Order.new
   end
 
@@ -25,8 +21,8 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    # ストロングパラメータ #:order_purchaseモデルはどこ？？
-    params.permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :tel)
+    # ストロングパラメータ #:order_purchaseモデルは?
+    params.permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :tel).merge(token: params[:token])
   end
 
   # def pay_item
