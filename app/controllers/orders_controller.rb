@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index] # 未ログインユーザーが購入ページに遷移しようとすると、ログインページに遷移する
   before_action :correct_user, only: [:index]
   before_action :set_item, only: [:index, :create]
 
