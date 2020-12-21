@@ -17,7 +17,7 @@ const pay = () => {
       if (status == 200) {
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
-        const tokenObj = `<input value=${token} name='token' type="hidden">`;
+        const tokenObj = `<input value=${token} name='token' type="hidden">`; //HTMLのinput要素にトークンの値を埋め込み、フォームに追加後、ブラウザ上で非表示
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
       }
 
@@ -32,8 +32,3 @@ const pay = () => {
 };
 
 window.addEventListener("load", pay);
-
-//テストカード
-//4242424242424242
-//123
-//l20-23:HTMLのinput要素にトークンの値を埋め込み、フォームに追加・非表示
