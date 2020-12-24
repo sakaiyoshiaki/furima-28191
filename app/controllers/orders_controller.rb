@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index] # 未ログインユーザーが購入ページに遷移しようとすると、ログインページに遷移する
-  before_action :correct_user, only: [:index]
   before_action :set_item, only: [:index, :create]
+  before_action :correct_user, only: [:index]
   before_action :soldout_index, only: :index
 
   def index
@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    @item = Item.find(params[:item_id])
     Payjp.api_key = ENV['PAYJP_SECRET_KEY'] # PAY.JPテスト秘密鍵
     Payjp::Charge.create(
       amount: @item.price, # 商品の値段
@@ -44,7 +43,6 @@ class OrdersController < ApplicationController
 
   def correct_user
     # 出品者は直接URLから商品購入ページにアクセスできない(売却前)
-    @item = Item.find(params[:item_id])
     redirect_to root_url if @item.user_id == current_user.id
   end
 
