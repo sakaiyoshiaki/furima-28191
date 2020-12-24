@@ -57,5 +57,15 @@ describe OrderItempurchase do
       @order.valid?
       expect(@order.errors.full_messages).to include('電話番号にハイフンは不要です')
     end
+    it 'user_idが空ならNG' do
+      @order.user_id = nil
+      @order.valid?
+      expect(@order.errors[:user_id]).to include('を入力してください')
+    end
+    it 'item_idが空ならNG' do
+      @order.item_id = nil
+      @order.valid?
+      expect(@order.errors[:item_id]).to include('を入力してください')
+    end
   end
 end
