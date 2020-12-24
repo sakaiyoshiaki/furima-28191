@@ -35,7 +35,7 @@ describe OrderItempurchase do
         expect(@order.errors[:prefecture_id]).to include('を入力してください')
       end
       it 'prefecture_idが1ならNG' do
-        @order.prefecture_id = '1'
+        @order.prefecture_id = 1
         @order.valid?
         expect(@order.errors[:prefecture_id]).to include('を選択してください')
       end
