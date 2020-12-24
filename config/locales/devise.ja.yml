@@ -42,6 +42,17 @@ ja:
         from_area_id: 発送元の地域
         deliver_leadtime_id: 発送までの日数 #追加
 
+  activemodel:
+    attributes:
+      order_itempurchase:
+        postal_code: 郵便番号 #追加
+        prefecture_id: 都道府県 #追加
+        city: 市区町村 #追加
+        house_number: 番地 #追加
+        building_name: 建物名 #追加
+        tel: 電話番号 #追加
+        token: カード情報 #追加
+
     models:
       user: ユーザ
   devise:

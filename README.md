@@ -1,6 +1,6 @@
 # README
 ## ER図
-![table](https://user-images.githubusercontent.com/67823080/100536916-3eb4f900-3267-11eb-8517-9292fdadd2f8.png)
+![table](https://user-images.githubusercontent.com/67823080/102077539-d2ccb600-3e4c-11eb-8c1e-1c50c63da970.png)
 
 ## usersテーブル
 | Column             | Type   | Options                 |
@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items, dependent: :destroy
-- has_many :purchase_histories, dependent: :destroy
+- has_many :item_purchases, dependent: :destroy
 
 
 ## itemsテーブル
@@ -35,10 +35,10 @@
 
 ### Association
 
-- has_one    :purchase_history
 - belongs_to :user
+- has_one    :item_purchase
 
-## addressesテーブル
+## ordersテーブル
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
 | postal_code         | string     | null: false                   |
@@ -47,23 +47,23 @@
 | house_number        | string     | null: false                   |
 | building_name       | string     |                               |
 | tel                 | string     | null: false                   |
-| purchase_history    | references | null: false,foreign_key: true |
+| item_purchase 　    | references | null: false,foreign_key: true |
 
 ### Association
 
-- belongs_to :purchase_history
+- belongs_to :item_purchase
 
-## purchase_historiesテーブル
+## item_purchasesテーブル
 | Column | Type       | Options                       |
 | ------ | ---------- | ----------------------------- |
-| item   | references | null: false,foreign_key: true |
 | user   | references | null: false,foreign_key: true |
+| item   | references | null: false,foreign_key: true |
 
 ### Association
 
-- belongs_to :item
 - belongs_to :user
-- has_one :address
+- belongs_to :item
+- has_one :order
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
