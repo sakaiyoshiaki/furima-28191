@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
 
   def move_to_index
     # 出品者以外は直接URLから商品編集ページにアクセスできない(売却前)
-    redirect_to root_path unless user_signed_in? && current_user.id == @item.user_id
+    redirect_to root_path unless current_user.id == @item.user_id
   end
 
   def soldout_index
