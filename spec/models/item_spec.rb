@@ -28,25 +28,50 @@ describe Item do
         @item.valid?
         expect(@item.errors[:price]).to include('を入力してください')
       end
+      it 'category_idが空ならNG' do
+        @item.category_id = nil
+        @item.valid?
+        expect(@item.errors[:category_id]).to include('を選択してください')
+      end
       it 'category_idが1ならNG' do
         @item.category_id = '1'
         @item.valid?
         expect(@item.errors[:category_id]).to include('を選択してください')
+      end
+      it 'status_idが空ならNG' do
+        @item.status_id = nil
+        @item.valid?
+        expect(@item.errors[:status_id]).to include('を選択してください')
       end
       it 'status_idが1ならNG' do
         @item.status_id = '1'
         @item.valid?
         expect(@item.errors[:status_id]).to include('を選択してください')
       end
+      it 'shipping_charge_idが空ならNG' do
+        @item.shipping_charge_id = nil
+        @item.valid?
+        expect(@item.errors[:shipping_charge_id]).to include('を選択してください')
+      end
       it 'shipping_charge_idが1ならNG' do
         @item.shipping_charge_id = '1'
         @item.valid?
         expect(@item.errors[:shipping_charge_id]).to include('を選択してください')
       end
+      it 'from_area_idが空ならNG' do
+        @item.from_area_id = nil
+        @item.valid?
+        expect(@item.errors[:from_area_id]).to include('を選択してください')
+      end
       it 'from_area_idが1ならNG' do
         @item.from_area_id = '1'
         @item.valid?
         expect(@item.errors[:from_area_id]).to include('を選択してください')
+      end
+      it 'deliver_leadtime_idが空ならNG' do
+        @item.deliver_leadtime_id = nil
+        @item.valid?
+        expect(@item.errors[:deliver_leadtime_id]).to include('を選択してください')
       end
       it 'deliver_leadtime_idが1ならNG' do
         @item.deliver_leadtime_id = '1'

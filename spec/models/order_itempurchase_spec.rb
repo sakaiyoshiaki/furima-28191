@@ -4,6 +4,8 @@ describe OrderItempurchase do
   describe '#create' do
     before do
       @order = FactoryBot.build(:order_itempurchase)
+      @order.user_id = 1
+      @order.item_id = 2
     end
 
     context '商品購入ができる時' do
@@ -47,7 +49,6 @@ describe OrderItempurchase do
         @order.valid?
         expect(@order.errors[:house_number]).to include('を入力してください')
       end
-
       it 'telが空ならNG' do
         @order.tel = nil
         @order.valid?
