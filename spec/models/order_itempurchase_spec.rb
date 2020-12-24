@@ -33,10 +33,9 @@ describe OrderItempurchase do
       @order.valid?
       expect(@order.errors[:house_number]).to include('を入力してください')
     end
-    it 'building_nameが空ならNG' do
+    it 'building_nameが空でも保存できる' do
       @order.building_name = nil
-      @order.valid?
-      expect(@order.errors[:building_name]).to include('を入力してください')
+      expect(@order).to be_valid
     end
     it 'telが空ならNG' do
       @order.tel = nil
@@ -52,6 +51,11 @@ describe OrderItempurchase do
       @order.tel = '080123456789' # 12文字
       @order.valid?
       expect(@order.errors[:tel]).to include('は11文字以内で入力してください')
+    end
+    it 'telにハイフンが含まれるとNG' do
+      @order.tel = '080-1234-5678'
+      @order.valid?
+      expect(@order.errors.full_messages).to include('電話番号にハイフンは不要です')
     end
   end
 end

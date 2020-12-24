@@ -6,7 +6,7 @@ class OrderItempurchase
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'にハイフンを含めて下さい' }
     validates :city
     validates :house_number
-    validates :tel, length: { maximum: 11 }
+    validates :tel, length: { maximum: 11 }, format: { with: /\A\d{10,11}\z/, message: 'にハイフンは不要です' }
     validates :token
     with_options numericality: { other_than: 1, message: 'を選択してください' } do
       validates :prefecture_id
