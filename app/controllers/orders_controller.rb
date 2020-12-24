@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index] # 未ログインユーザーが購入ページに遷移しようとすると、ログインページに遷移する
   before_action :correct_user, only: [:index]
   before_action :set_item, only: [:index, :create]
+  before_action :soldout_index, only: :index
 
   def index
     @order = OrderItempurchase.new
@@ -42,8 +43,13 @@ class OrdersController < ApplicationController
   end
 
   def correct_user
-    # 出品者がURLを直接入力して購入ページに遷移しようとすると、トップページに遷移する
+    # 出品者は直接URLから商品購入ページにアクセスできない(売却前)
     @item = Item.find(params[:item_id])
     redirect_to root_url if @item.user_id == current_user.id
+  end
+
+  def soldout_index
+    # ログイン・ログアウトの状態に関わらず、直接URLから売却済み商品の商品購入ページにアクセスできない
+    redirect_to root_path unless @item.item_purchase.nil?
   end
 end

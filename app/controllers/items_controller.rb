@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: :edit
+  before_action :soldout_index, only: :edit
 
   def index
     # 全ての商品レコードを含んだインスタンス変数を生成し、出品順に並び替える
@@ -65,11 +66,12 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    # 出品者のみ、自分の商品の編集画面に直接URLからアクセスできる。出品者以外はトップページに遷移。未ログイン時はログイン画面に遷移。
-    if user_signed_in? && current_user.id == @item.user_id
-      render :edit
-    else
-      redirect_to root_path
-    end
+    # 出品者以外は直接URLから商品編集ページにアクセスできない(売却前)
+    redirect_to root_path unless user_signed_in? && current_user.id == @item.user_id
+  end
+
+  def soldout_index
+    # ログイン・ログアウトの状態に関わらず、直接URLから売却済み商品の商品情報編集ページにアクセスできない
+    redirect_to root_path unless @item.item_purchase.nil?
   end
 end
