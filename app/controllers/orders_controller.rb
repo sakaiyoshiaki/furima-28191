@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
 
   def correct_user
     # 出品者は直接URLから商品購入ページにアクセスできない(売却前)
-    redirect_to root_url if @item.user_id == current_user.id
+    redirect_to root_path if @item.user_id == current_user.id
   end
 
   def soldout_index

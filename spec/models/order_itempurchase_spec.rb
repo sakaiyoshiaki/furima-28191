@@ -27,6 +27,11 @@ describe OrderItempurchase do
         @order.valid?
         expect(@order.errors[:postal_code]).to include('を入力してください')
       end
+      it 'prefecture_idが空ならNG' do
+        @order.prefecture_id = nil
+        @order.valid?
+        expect(@order.errors[:prefecture_id]).to include('を入力してください')
+      end
       it 'prefecture_idが1ならNG' do
         @order.prefecture_id = '1'
         @order.valid?
