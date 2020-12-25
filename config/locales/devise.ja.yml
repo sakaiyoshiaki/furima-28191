@@ -35,7 +35,7 @@ ja:
       item:
         title: 商品名 #追加
         description: 商品の説明 #追加
-        shipping_charges_id: 配送料の負担先 #追加
+        shipping_charge_id: 配送料の負担先 #追加
         price: 販売価格 #追加
         category_id: カテゴリー #追加
         status_id: 商品の状態 #追加
