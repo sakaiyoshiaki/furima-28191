@@ -31,8 +31,8 @@ ja:
         family_name_kana: 名字(カナ) #追加
         personal_name_kana: お名前(カナ) #追加
         birthday: 生年月日 #追加
-
       item:
+        image: 画像 #追加
         title: 商品名 #追加
         description: 商品の説明 #追加
         shipping_charge_id: 配送料の負担先 #追加
