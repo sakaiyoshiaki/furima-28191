@@ -28,6 +28,10 @@ class ItemsController < ApplicationController
 
   def show
     # 出品された商品データのidから商品レコードを取得する
+
+    # コメントのインスタンスを生成し、上から順に表示する
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit
