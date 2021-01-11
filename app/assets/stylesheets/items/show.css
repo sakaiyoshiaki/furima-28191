@@ -207,7 +207,7 @@
 
 /* コメント一覧 */
 .itemcomment__box{
-  width: calc(100% - 56px);
+  width: 695px;
   padding: 16px;
 }
 
@@ -215,7 +215,7 @@
   margin: 15px;
   float: left;
   position: relative;
-  width: calc(100% - 56px);
+  width: 695px;
   padding: 16px;
   background: #3CCACE;
   border-radius: 15px;
@@ -244,4 +244,16 @@
 
 .date{
   font-size: 10px;
+  float: right;
+  padding-right: 20px;
+  margin-top: -10px;
+}
+
+.user_comment{
+  display:flex
+}
+
+.user{
+  padding-top: 10px;
+  padding-right: 10px;
 }
