@@ -87,7 +87,7 @@
   <div class="itemcomment__box">
     <p> < コメント一覧 > </p>
         <div class="itemcomment__box__content" >
-          <% @comments.each do |comment| %>
+          <% @comments.reverse_each do |comment| %>
               <div class="user_comment1">
                 <div class="user1">
                   <%= comment.user.nickname %>

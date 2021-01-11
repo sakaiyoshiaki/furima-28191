@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 
     # コメントのインスタンスを生成し、上から順に表示する
     @comment = Comment.new
-    @comments = @item.comments.includes(:user)
+    @comments = @item.comments.includes(:user).all
   end
 
   def edit

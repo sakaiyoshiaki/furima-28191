@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users
   resources :items do
     resources :orders
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:new, :create, :destroy]
   end
 
 end
