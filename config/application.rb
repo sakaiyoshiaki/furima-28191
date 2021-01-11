@@ -10,7 +10,7 @@ module Furima28191
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-
+    config.time_zone = 'Asia/Tokyo' #日本時間に変更
     # 日本語の言語設定
     config.i18n.default_locale = :ja
     # Settings in config/environments/* take precedence over those specified here.

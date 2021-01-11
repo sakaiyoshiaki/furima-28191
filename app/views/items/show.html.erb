@@ -84,18 +84,26 @@
       </div>
     </div>
 
-  <div class="itemcomment__box__content__comment">
+  <div class="itemcomment__box">
     <p> < コメント一覧 > </p>
-    <% if @comments %>
-      <div class="itemcomment__box__content__comment__member" >
-      <% @comments.each do |comment| %>
-        <div class= "itemcomment__box__content__comment__member__list" >
-          <strong><%= comment.user.nickname %>:</strong>
-          <%= comment.text %>
+      <% if @comments %>
+        <div class="itemcomment__box__content" >
+          <% @comments.each do |comment| %>
+            <div>
+              <%= comment.user.nickname %>:
+                <div class="date">
+                  <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+                </div>
+              <div class="says">
+                  <%= comment.text %>
+                <div>
+                  <%= link_to '削除', item_comment_path(@item, comment), method: :delete, class:'comment-destroy' %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
-      </div>
-    <% end %>
   </div>
 
   </div>

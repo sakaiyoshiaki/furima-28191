@@ -9,7 +9,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    # 遷移元のURLを取得して商品詳細ページにリダイレクトする
+    redirect_to request.referer
+  end
+
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, item_id: params[:item_id])
   end

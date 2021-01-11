@@ -205,6 +205,43 @@
   font-size: 23px;
 }
 
-.itemcomment__box__content__comment{
-  margin: 30px;
+/* コメント一覧 */
+.itemcomment__box{
+  width: calc(100% - 56px);
+  padding: 16px;
+}
+
+.says{
+  margin: 15px;
+  float: left;
+  position: relative;
+  width: calc(100% - 56px);
+  padding: 16px;
+  background: #3CCACE;
+  border-radius: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid  #3CCACE;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.comment-destroy{
+  float: right;
+  border: 1px solid black;
+  background: red;
+  color: white;
+}
+
+.date{
+  font-size: 10px;
 }
