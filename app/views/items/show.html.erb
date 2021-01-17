@@ -87,21 +87,21 @@
   <div class="itemcomment__box">
     <p> < コメント一覧 > </p>
         <div class="itemcomment__box__content" >
-          <% @comments.reverse_each do |comment| %>
-              <div class="user_comment1">
-                <div class="user1">
+          <% @comments.each do |comment| %>
+              <div class="user_comment">
+                <div class="user">
                   <%= comment.user.nickname %>
                 </div>
-                <div class="says1">
+                <div class="says">
                     <%= comment.text %>
                   <div>
-                  <% if  current_user.id == comment.item.user_id %>
+                  <% if  current_user.id == comment.item.user_id || current_user.id == comment.user_id %>
                     <%= link_to '削除', item_comment_path(@item, comment), method: :delete, class:'comment-destroy' %>
                   <% end %>
                   </div>
                 </div>
               </div>
-            <div class="date1">
+            <div class="date">
               <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
             </div>
           <% end %>
@@ -111,7 +111,7 @@
   <%# /商品の概要 %>
   <div class="comment-box">
     <% if user_signed_in? %>
-      <%= form_with(model: [@item, @comment], local: true, class: "message-form") do |form| %>
+      <%= form_with(model: [@item, @comment], class: "message-form") do |form| %>
       <%= form.text_area:text, class:"comment-text"%>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。

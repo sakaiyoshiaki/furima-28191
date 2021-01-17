@@ -4,9 +4,9 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start() //無効化：Javascriptの挙動の正常化
+require("turbolinks").start() //無効化：Javascriptの挙動の正常化
 require("@rails/activestorage").start()
-require("channels")
+// require("channels")
 // ↓ 追記
 require('jquery')
 require('calculation.js')
